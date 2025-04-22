@@ -1,0 +1,342 @@
+body {
+  margin: 0;
+  height: 100vh;
+  padding: 0px;
+  border: 0px;
+  font: inherit;
+  vertical-align: baseline;
+  background: linear-gradient(135deg, #ff8a80 0%, #ff80ab 50%, #ea80fc 100%);
+}
+.petal:nth-child(2n) {
+  background: #ff1744;
+}
+.petal:nth-child(3n) {
+  background: #d81b60;
+}
+.petal:nth-child(4n) {
+  background: #c2185b;
+}
+
+@keyframes falling {
+  0% {
+    top: -10%;
+    transform: rotate(0deg) translateX(0);
+    opacity: 1;
+  }
+  25% {
+    transform: rotate(90deg) translateX(50px);
+  }
+  50% {
+    transform: rotate(180deg) translateX(-50px);
+  }
+  75% {
+    transform: rotate(270deg) translateX(50px);
+  }
+  100% {
+    top: 100%;
+    transform: rotate(360deg) translateX(-50px);
+    opacity: 0;
+  }
+}
+
+.petal:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+}
+.petal:nth-child(2) {
+  left: 20%;
+  animation-delay: -2s;
+}
+.petal:nth-child(3) {
+  left: 30%;
+  animation-delay: -4s;
+}
+.petal:nth-child(4) {
+  left: 40%;
+  animation-delay: -6s;
+}
+.petal:nth-child(5) {
+  left: 50%;
+  animation-delay: -8s;
+}
+.petal:nth-child(6) {
+  left: 60%;
+  animation-delay: -1s;
+}
+.petal:nth-child(7) {
+  left: 70%;
+  animation-delay: -3s;
+}
+.petal:nth-child(8) {
+  left: 80%;
+  animation-delay: -5s;
+}
+.petal:nth-child(9) {
+  left: 90%;
+  animation-delay: -7s;
+}
+.petal:nth-child(10) {
+  left: 95%;
+  animation-delay: -9s;
+}
+
+main {
+  position: relative;
+}
+
+main.animated {
+  opacity: 0;
+  filter: blur(10px);
+  transition: opacity 2s ease-in-out, filter 2s ease-in-out;
+}
+h1 {
+  line-height: 1.5;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.4px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+
+}
+h2 {
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: #ffffff;
+}
+p {
+  text-align: center;
+}
+.Avatar {
+  max-width: 100%;
+  width: 96px;
+  margin: 0 auto;
+  height: 96px;
+  border-radius: 9999px;
+  display: grid;
+  align-items: center;
+}
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.Container-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.h-full {
+  height: 100%;
+  gap: 1rem;
+  max-width: 580px;
+  width: 100%;
+}
+
+.relative-h-full {
+  position: relative;
+}
+.ProfileContainer {
+  max-width: 580px;
+  width: 100%;
+  height: 100px;
+  margin-top: 1.5em;
+  margin-left: auto;
+  margin-right: auto;
+}
+img.rounded-full {
+  overflow: hidden;
+  object-fit: cover;
+  filter: drop-shadow(2px 3px 2px rgba(0, 0, 0, 0.4));
+}
+.Button1 {
+  max-width: 580px;
+  width: 100%;
+  height: 100%;
+  max-height: 64px;
+  margin: 12px auto; /* Căn giữa ngang và thêm khoảng cách dọc giữa các nút */
+  padding: 16px 24px; /* Tăng nhẹ padding */
+  box-sizing: border-box; /* Đảm bảo padding/border không làm tăng kích thước tổng */
+
+  background-color: rgba(255, 253, 253, 0.15);
+  -webkit-backdrop-filter: blur(12px); /* Dành cho Safari */
+  backdrop-filter: blur(12px); /* Độ mờ (px), bạn có thể tăng/giảm */
+  border: 1px solid rgba(255, 255, 255, 70%);
+
+  border-radius: 12px;
+  color: #fff; /* Chữ trắng */
+  font-size: 16px;
+  font-weight: 600; /* Trọng lượng font (có thể trông nhẹ nhàng hơn 'bold') */
+  text-decoration: none; /* Bỏ gạch chân (nếu đây là thẻ <a>) */
+  cursor: pointer;
+  display: flex; /* Biến nút thành flex container */
+  align-items: center; /* Căn giữa nội dung theo chiều dọc */
+  justify-content: center; /* Căn giữa nội dung theo chiều ngang */
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    transform 0.15s ease;
+  &:hover {
+    background-color: rgba(
+      230,
+      214,
+      214,
+      0.12
+    ); /* Nền trắng mờ hơn khi hover */
+    border-color: rgba(255, 255, 255, 0.9); /* Viền rõ hơn khi hover */
+    transform: translateY(-2px) scale(1.01); /* Hiệu ứng hơi nhấc lên và phóng to nhẹ */
+  }
+}
+  &:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.9);
+  }
+  &:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
+    background-color: rgba(255, 255, 255, 0.1); /* Có thể giống hover */
+    border-color: rgba(255, 255, 255, 0.9); /* Có thể giống hover */
+  }
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+  .Button1 .h-full-w,
+  .Button1 .linkthumbmail {
+    display: contents; /* Cho phép flexbox của .Button1 điều khiển trực tiếp icon và p */
+  }
+  .Button1 .Icon-btn {
+    position: static;
+    transform: none;
+    left: auto;
+    top: auto;
+    pointer-events: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px; 
+    height: 48px;
+    overflow: visible;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .Button1 .Icon-btn img {
+    border-radius: 50%;
+  }
+  .Button1 span {
+    margin: 0;
+    text-align: center;
+    flex-grow: 1;
+    margin: 16px auto;
+    max-height: 64px;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+  }
+#text{
+  padding-right: 1rem;
+}
+  .h-full-w {
+    width: 100%;
+    height: 100%;
+    margin-right: 1.75em;
+  }
+  .icon-Container>a{
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .15s;
+  }
+  .rose-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+    overflow: hidden;
+  }
+  .petal {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #e28aaa; /* Màu hồng Sakura */
+    border-radius: 70% 100% 60% 6%;
+    transform: rotate(-20deg);
+    opacity: 0.8;
+    animation: falling 10s linear infinite;
+  }
+
+  .petal::after {
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    background-color: #e28aaa;
+    border-radius: 50% 80% 50% 60%;
+    transform: rotate(-20deg);
+    opacity: 0.8;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+    animation: fall linear infinite;
+  }
+
+  .icon-Container {
+    display: flex; /* Sử dụng Flexbox để sắp xếp các icon con */
+    justify-content: center; /* Căn giữa nhóm các icon theo chiều ngang */
+    align-items: center; /* Căn các icon thẳng hàng theo chiều dọc */
+    gap: 18px; /* Khoảng cách giữa các icon (điều chỉnh nếu muốn) */
+    margin-top: 15px; /* Khoảng cách với các phần tử bên trên */
+  }
+
+  /* Định dạng cho từng thẻ link <a> chứa icon */
+  .icon > a {
+    display: inline-flex; /* Biến thẻ <a> thành flex container (inline) để căn giữa nội dung */
+    align-items: center; /* Căn giữa thẻ <img> bên trong theo chiều dọc */
+    justify-content: center; /* Căn giữa thẻ <img> bên trong theo chiều ngang */
+    padding: 6px; /* QUAN TRỌNG: Tạo không gian xung quanh <img> để việc căn giữa có hiệu lực rõ ràng và tạo hiệu ứng hover đẹp hơn */
+    border-radius: 50%; /* Bo tròn khu vực thẻ <a> (cho hiệu ứng nền tròn khi hover) */
+    line-height: 0; /* Giúp tránh khoảng trống thừa dưới ảnh */
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out; /* Hiệu ứng khi hover */
+  }
+
+  /* Hiệu ứng khi di chuột vào icon */
+  .icon > a:hover {
+    transform: scale(1.15); /* Phóng to nhẹ icon */
+    background-color: rgba(255, 255, 255, 0.1); /* Thêm nền mờ nhẹ */
+  }
+
+  /* Định dạng cho chính thẻ ảnh <img> */
+  .icon > a > img {
+    display: block; /* Đảm bảo ảnh hiển thị như một khối, tránh lỗi căn chỉnh inline */
+    /* Kích thước width="30" height="30" đã được đặt trong HTML */
+  }
+
+  .icon > a:hover {
+    transform: scale(1.15);
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.1
+    ); /* Thêm một lớp nền mờ nhẹ khi hover */
+  }
+
+  .icon > a > img {
+    display: block;
+  }
+
+  @media (max-width: 480px) {
+    .icon-Container {
+      gap: 12px;
+    }
+    .icon > a {
+      padding: 4px;
+    }
+    .Button1 span{
+      font-size: 14px;
+    }
+  }

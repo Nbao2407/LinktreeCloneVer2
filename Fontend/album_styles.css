@@ -1,0 +1,87 @@
+/* Fontend/album_styles.css */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f0f0f0;
+    /* Thêm hiệu ứng cuộn nền parallax đơn giản nếu muốn */
+    /* background-image: url('your-background-image.jpg'); */
+    /* background-attachment: fixed; */
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+}
+
+.bento-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Cột tự động điều chỉnh */
+    grid-auto-rows: 150px; /* Chiều cao hàng cố định ban đầu */
+    grid-auto-flow: dense; /* Lấp đầy khoảng trống */
+    gap: 10px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    perspective: 1000px; /* Cho hiệu ứng 3D */
+}
+
+.bento-item {
+    overflow: hidden; /* Đảm bảo ảnh không tràn ra ngoài */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    background-color: #fff; /* Màu nền cho các ô */
+    animation: fadeIn 0.8s ease-out forwards; /* Animation xuất hiện */
+    opacity: 0; /* Bắt đầu ẩn */
+    transform: translateY(20px); /* Bắt đầu dịch chuyển xuống */
+}
+
+/* Kích thước khác nhau cho các item (ví dụ) */
+.bento-item:nth-child(3n+1) {
+    grid-column: span 2; /* Rộng gấp đôi */
+}
+
+.bento-item:nth-child(4n+2) {
+    grid-row: span 2; /* Cao gấp đôi */
+}
+
+.bento-item:nth-child(5n) {
+    grid-column: span 2;
+    grid-row: span 2; /* Cả rộng và cao gấp đôi */
+}
+
+.bento-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cắt ảnh vừa với khung */
+    transition: transform 0.5s ease;
+}
+
+.bento-item:hover {
+    transform: scale(1.03) rotateX(5deg) rotateY(-3deg); /* Hiệu ứng khi di chuột */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10; /* Đưa lên trên khi hover */
+}
+
+.bento-item:hover img {
+    transform: scale(1.1); /* Phóng to ảnh nhẹ khi di chuột vào item */
+}
+
+/* Animation xuất hiện */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Điều chỉnh delay cho animation để các item xuất hiện lần lượt */
+/* Bạn có thể cần điều chỉnh số lượng item phù hợp */
+.bento-item:nth-child(1) { animation-delay: 0.1s; }
+.bento-item:nth-child(2) { animation-delay: 0.2s; }
+.bento-item:nth-child(3) { animation-delay: 0.3s; }
+.bento-item:nth-child(4) { animation-delay: 0.4s; }
+.bento-item:nth-child(5) { animation-delay: 0.5s; }
+.bento-item:nth-child(6) { animation-delay: 0.6s; }
+.bento-item:nth-child(7) { animation-delay: 0.7s; }
+.bento-item:nth-child(8) { animation-delay: 0.8s; }
+/* Thêm các delay khác nếu cần */ 

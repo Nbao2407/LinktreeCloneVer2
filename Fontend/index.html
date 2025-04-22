@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đường Tư Mẫn</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="rose-container"></div>
+    <main class="animated">
+      <div class="ProfileContainer">
+        <div class="Header">
+          <div class="container">
+            <img src="/Asset/avartar.jpg" alt="" class="Avatar" />
+            <h1>Đường Tư Mẫn</h1>
+            <h2>Em là con Dán của anh❤<br>
+              Vô Album để xem sample nè</h2>
+          </div>
+        </div>
+        <div class="Container-body">
+          <div class="h-full">
+            <div class="relative-h-full">
+              <div class="imgcontainer">
+                <a href="" class="Button1">
+                 <img
+                  width="48"
+                  height="48"
+                  src="https://img.icons8.com/ios/48/facebook-new.png"
+                  alt="facebook-new" class="Icon-btn"/>
+                  <div class="h-full-w">
+                    <div class="linkthumbmail">
+                      <span >Facebook || ❤️Tôi yêu gián🪳🪳</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="h-full">
+            <div class="relative-h-full">
+              <div class="imgcontainer">
+                <a href="" class="Button1">
+                  <img src="/Asset/ruby-removebg-preview.png" alt="" class="Icon-btn rounded-full" />
+                    <div class="linkthumbmail">
+                      <span id="text">Album sample</span>
+                    </div>
+                </a>
+              </div>
+            </div>
+          </div>
+            <div class="icon-Container">
+              <a href="https://www.facebook.com/kimiko.aniie">
+                <img
+                  width="32"
+                  height="32"
+                  src="https://img.icons8.com/ios/32/facebook-new.png"
+                  alt="facebook-new"/>
+              </a>
+            </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const icons = document.querySelectorAll(".icon-Container a img");
+        icons.forEach((icon) => {
+          icon.addEventListener("mouseover", () => {
+            icon.style.transform = "scale(1.1)";
+          });
+          icon.addEventListener("mouseleave", () => {
+            icon.style.transform = "scale(1)";
+          });
+        });
+        
+        setTimeout(() => {
+          const main = document.querySelector("main");
+          main.style.opacity = 1;
+          main.style.filter = "blur(0px)";
+        }, 500);
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        const roseContainer = document.querySelector(".rose-container");
+
+        for (let i = 0; i < 40; i++) {
+          const petal = document.createElement("div");
+          petal.className = "petal";
+          petal.style.transform = `rotate(${i * 5.14}deg)`;
+          roseContainer.appendChild(petal);
+        }
+      });
+    </script>
+  </body>
+</html>
